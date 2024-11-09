@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CadastroCliente</title>
+    <style>
+      body {
+        background-color: #333;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+        width: 600px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        color: #333;
+      }
+      .container img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .container label {
+        display: block;
+        margin-top: 10px;
+      }
+      .container input[type="text"],
+      .container input[type="number"],
+      .container input[type="email"],
+      .container input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #b5651d;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .container input[type="radio"] {
+        margin-right: 5px;
+      }
+      .container .radio-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+      }
+      .container .radio-group label {
+        display: flex;
+        align-items: center;
+      }
+      .container .radio-group input {
+        margin-right: 5px;
+      }
+      .container .form-group {
+        display: flex;
+        justify-content: space-between;
+      }
+      .container .form-group .left,
+      .container .form-group .right {
+        width: 48%;
+      }
+      .container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #d88837;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .container button:hover {
+        background-color: #a0522d;
+      }
+      .back-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #5e5047;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      .back-button:hover {
+        background-color: #555;
+      }
+    </style>
+    <script>
+      function redirectToCadastroMenu() {
+        window.location.href = "cadastro_produtosMenu.html";
+      }
+
+      function redirectToHome() {
+        window.location.href = "home.html";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        alt="Pessoa trabalhando com notebook"
+        height="200"
+        src="https://storage.googleapis.com/a1aa/image/5iMIrmzNsmqnGhFE889SOsIxKFGVBy05KXCIx2xKmIOfNZ3JA.jpg"
+        width="400"
+      />
+      <div class="radio-group">
+        <label
+          ><input name="categoria" type="radio" value="pessoa_fisica" />Pessoa
+          física</label
+        >
+        <label
+          ><input
+            name="categoria"
+            type="radio"
+            value="exterior"
+          />Exterior</label
+        >
+        <label
+          ><input name="categoria" type="radio" value="pessoa_juridica" />Pessoa
+          jurídica</label
+        >
+      </div>
+      <label for="cnpj_cpf">CNPJ/CPF</label>
+      <input id="cnpj_cpf" name="cnpj_cpf" type="text" />
+      <label for="rg">RG</label>
+      <input id="rg" name="rg" type="text" />
+      <div class="form-group">
+        <div class="left">
+          <label for="cep">Cep</label>
+          <input id="cep" name="cep" type="text" />
+          <label for="numero">Número</label>
+          <input id="numero" name="numero" type="text" />
+          <label for="contato">Contato</label>
+          <input id="contato" name="contato" type="text" />
+          <label for="celular">Celular</label>
+          <input id="celular" name="celular" type="text" />
+        </div>
+        <div class="right">
+          <label for="endereco">Endereço</label>
+          <input id="endereco" name="endereco" type="text" />
+          <label for="complemento">Complemento</label>
+          <input id="complemento" name="complemento" type="text" />
+          <label for="telefone">Telefone</label>
+          <input id="telefone" name="telefone" type="text" />
+          <label for="fax">Fax</label>
+          <input id="fax" name="fax" type="text" />
+        </div>
+      </div>
+      <button type="button" onclick="redirectToCadastroMenu()">
+        Registrar
+      </button>
+      <button
+        type="button"
+        class="back-button"
+        onclick="redirectToTransportadoraCadastro()"
+      >
+        Voltar
+      </button>
+    </div>
+  </body>
+</html>

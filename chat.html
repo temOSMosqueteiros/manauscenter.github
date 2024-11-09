@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <title>Chat Interface</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .header div {
+        flex: 1;
+        text-align: center;
+      }
+      .header div span {
+        display: block;
+        font-size: 12px;
+      }
+      .header div span.notification {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        position: relative;
+        top: 5px;
+        right: 0;
+      }
+      .chat-header {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .chat-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .chat-header .name {
+        flex: 1;
+      }
+      .chat-header .time {
+        font-size: 14px;
+        color: #666;
+      }
+      .chat-body {
+        flex: 1;
+        padding: 10px;
+        background-color: #fff;
+        overflow-y: auto;
+      }
+      .message {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .message .text {
+        flex: 1;
+        background-color: #e0e0e0;
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+      }
+      .message .status {
+        color: green;
+      }
+      .chat-footer {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+      }
+      .chat-footer input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+      .chat-footer button {
+        background-color: #fff;
+        border: none;
+        font-size: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div>
+          <img
+            alt="User profile picture"
+            height="40"
+            src="https://storage.googleapis.com/a1aa/image/yCB7rAa2oVbML13JeyIT4NJMYXpA56K3SRlRp8CFc9RA9euTA.jpg"
+            width="40"
+          />
+          <span> Gustavo </span>
+          <span class="notification"> </span>
+        </div>
+        <div>
+          <img
+            alt="User profile picture"
+            height="40"
+            src="https://img.freepik.com/fotos-gratis/vista-frontal-de-um-homem-sorridente-e-bonito-com-os-bracos-cruzados_23-2148946218.jpg?semt=ais_hybrid"
+            width="40"
+          />
+          <span> Leonardo </span>
+        </div>
+        <div>
+          <img
+            alt="User profile picture"
+            height="40"
+            src="https://img.freepik.com/fotos-gratis/retrato-de-homem-com-tatuagens-no-corpo_23-2150774549.jpg?semt=ais_hybrid"
+            width="40"
+          />
+          <span> Jonathan </span>
+        </div>
+        <div>
+          <img
+            alt="User profile picture"
+            height="40"
+            src="https://img.freepik.com/fotos-gratis/soa-interessante-curiosa-bonita-feliz-sorridente-de-cabelos-cacheados-ouvindo-tendo-uma-agradavel-conversa-engracada-toque-na-bochecha-sorrindo-acenando-com-a-cabeca-concordando-falando-colega-de-trabalho-pausa-para-o-almoco-fundo-branco_176420-34900.jpg?semt=ais_hybrid"
+            width="40"
+          />
+          <span> Laura Monteiro </span>
+        </div>
+        <div>
+          <img
+            alt="User profile picture"
+            height="40"
+            src="https://img.freepik.com/fotos-gratis/mulher-de-tiro-medio-passando-bons-momentos-ao-ar-livre_23-2150757174.jpg?t=st=1731079752~exp=1731083352~hmac=b4ab4e244d5bac47c5a204d9b04b9691f837bec811c77fbbb2f059a707d396ee&w=360"
+            width="40"
+          />
+          <span> Eve </span>
+        </div>
+      </div>
+      <div class="chat-header">
+        <img
+          alt="User profile picture"
+          height="40"
+          src="https://img.freepik.com/fotos-premium/mulher-jovem-e-bonita-sorrindo-com-os-bracos-cruzados-e-uma-expressao-feliz-confiante-e-satisfeita-vista-lateral_1194-174717.jpg?semt=ais_hybrid"
+          width="40"
+        />
+        <div class="name">Alice</div>
+        <div class="time">16:30</div>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <div class="message">
+          <div class="text"></div>
+          <div class="status">
+            <i class="fas fa-check"> </i>
+          </div>
+        </div>
+        <div class="message">
+          <div class="text"></div>
+          <div class="status">
+            <i class="fas fa-check"> </i>
+          </div>
+        </div>
+        <div class="message">
+          <div class="text"></div>
+          <div class="status">
+            <i class="fas fa-check"> </i>
+          </div>
+        </div>
+        <div class="message">
+          <div class="text"></div>
+        </div>
+        <div class="message">
+          <div class="text"></div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <input id="message-input" placeholder="Type a message" type="text" />
+        <button onclick="sendMessage()">
+          <i class="fas fa-paper-plane"> </i>
+        </button>
+      </div>
+    </div>
+    <script>
+      function sendMessage() {
+        var input = document.getElementById("message-input");
+        var message = input.value.trim();
+        if (message !== "") {
+          var chatBody = document.getElementById("chat-body");
+          var messageDiv = document.createElement("div");
+          messageDiv.className = "message";
+          var textDiv = document.createElement("div");
+          textDiv.className = "text";
+          textDiv.textContent = message;
+          messageDiv.appendChild(textDiv);
+          chatBody.appendChild(messageDiv);
+          input.value = "";
+          chatBody.scrollTop = chatBody.scrollHeight;
+        }
+      }
+    </script>
+  </body>
+</html>

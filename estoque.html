@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visão Geral Estoque</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .sidebar {
+        width: 250px;
+        background-color: #fff;
+        height: 100vh;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        padding: 20px;
+      }
+      .sidebar h2 {
+        font-size: 18px;
+        color: #333;
+      }
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+      .sidebar ul li {
+        margin-bottom: 10px;
+      }
+      .sidebar ul li a {
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .sidebar ul li a i {
+        text-decoration: none;
+        color: #333;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .sidebar ul li a:hover,
+      .sidebar ul li a.active {
+        background-color: #d8a7a7;
+      }
+      .sidebar .chat-icon {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .sidebar .chat-icon i {
+        font-size: 24px;
+        color: #333;
+      }
+      .content {
+        margin-left: 270px;
+        padding: 20px;
+      }
+      .content h1 {
+        font-size: 24px;
+        color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+      .search-bar input {
+        padding: 10px;
+        width: 1000px;
+        border: 1px solid #d8a7a7;
+        border-radius: 5px;
+      }
+      .table-container {
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #e6f7ff;
+      }
+      table th,
+      table td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      table th {
+        background-color: #b3e0ff;
+      }
+      .status {
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #fff;
+      }
+      .status.pago {
+        background-color: #28a745;
+      }
+      .status.pendente {
+        background-color: #ffc107;
+      }
+      .status.cancelado {
+        background-color: #dc3545;
+      }
+      .status.EmRota {
+        background-color: #358ddf;
+      }
+      .products-container {
+        display: flex;
+        margin-top: 20px;
+      }
+      .products-container .product {
+        width: 150px;
+        margin-right: 20px;
+        text-align: center;
+      }
+      .products-container .product img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h2>Bem-vindo de volta!</h2>
+      <ul>
+        <li>
+          <a href="home.html"> <i class="fas fa-home"></i> Home </a>
+        </li>
+        <li class="active">
+          <a href="estoque.html"> <i class="fas fa-box"></i> Estoque </a>
+        </li>
+        <li>
+          <a href="produtos.html"> <i class="fas fa-tags"></i> Produtos </a>
+        </li>
+        <li>
+          <a href="clientes.html"> <i class="fas fa-users"></i> Clientes </a>
+        </li>
+        <li>
+          <a href="cadastro_produtosMenu.html">
+            <i class="fas fa-user-plus"></i> Cadastro
+          </a>
+        </li>
+      </ul>
+      <a href="chat.html" class="chat-icon">
+        <i class="fas fa-comment-dots"></i>
+      </a>
+    </div>
+
+    <div class="content">
+      <h1>
+        Visão geral estoque
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input placeholder="Pesquisar produtos" type="text" />
+        </div>
+      </h1>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Ações</th>
+              <th>Nome do cliente</th>
+              <th>Mensagem</th>
+              <th>Produto</th>
+              <th>Quant.</th>
+              <th>Preço</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Cliente imagem"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 1</td>
+              <td>2</td>
+              <td>R$1.500</td>
+              <td><span class="status pago"> Pago </span></td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Cliente imagem"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 2</td>
+              <td>1</td>
+              <td>R$1.200</td>
+              <td>
+                <span class="status EmRota"> Em Rota </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 3</td>
+              <td>3</td>
+              <td>R$1.800</td>
+              <td>
+                <span class="status cancelado"> Cancelado </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 4</td>
+              <td>2</td>
+              <td>R$1.500</td>
+              <td>
+                <span class="status pago"> Pago </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 5</td>
+              <td>1</td>
+              <td>R$1.200</td>
+              <td>
+                <span class="status pendente"> Pendente </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 6</td>
+              <td>3</td>
+              <td>R$1.800</td>
+              <td>
+                <span class="status cancelado"> Cancelado </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 7</td>
+              <td>2</td>
+              <td>R$1.500</td>
+              <td>
+                <span class="status pago"> Pago </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 8</td>
+              <td>1</td>
+              <td>R$1.200</td>
+              <td>
+                <span class="status EmRota"> Em Rota </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 9</td>
+              <td>3</td>
+              <td>R$1.800</td>
+              <td>
+                <span class="status cancelado"> Cancelado </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 10</td>
+              <td>2</td>
+              <td>R$1.500</td>
+              <td>
+                <span class="status pago"> Pago </span>
+              </td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>
+                <img
+                  alt="Client image"
+                  height="30"
+                  src="https://storage.googleapis.com/a1aa/image/fiiv1APPxvREKqLfLHc6wAbfNXMdN2fQ7x98uUuOpLNCxN7OB.jpg"
+                  width="30"
+                />
+                Nome
+              </td>
+              <td>Mensagem</td>
+              <td>Produto 11</td>
+              <td>1</td>
+              <td>R$1.200</td>
+              <td>
+                <span class="status pendente"> Pendente </span>
+              </td>
+
+              <td>
+                <title>Visão Geral Estoque</title>
+                <link
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                  rel="stylesheet"
+                />
+                <style>
+                  body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f5f5f5;
+                  }
+                  .sidebar {
+                    width: 250px;
+                    background-color: #fff;
+                    height: 100vh;
+                  }
+                </style>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="products-container">
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+        <div class="product">
+          <img
+            alt="Product image"
+            height="150"
+            src="https://storage.googleapis.com/a1aa/image/fczENdoKRGxsBSNEjPfvOeeKxuzYNX6UbWCQoaRFUTaehb2dC.jpg"
+            width="150"
+          />
+          <p>Produto em falta</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat-icon">
+      <i class="fas fa-comment"> </i>
+    </div>
+  </body>
+</html>
